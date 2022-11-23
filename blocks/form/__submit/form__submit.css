@@ -1,0 +1,25 @@
+.popup__submit {
+   width: 83.25%;
+   height: 50px;
+   background: #000;
+   border-radius: 2%;
+   margin: 20px auto 37px;
+   color: #fff;
+   border: none;
+   padding: 0;
+   transition: opacity .3s ease-in;
+}
+
+.popup__submit:hover {
+   opacity: .8;
+   cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+   .popup__save-button {
+       width: 86.25%;
+       margin: 45px 22px 25px;
+       height: 46px;
+       font-size: 14px;
+   }
+}

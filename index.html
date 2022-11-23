@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mesto</title>
+   <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="root">
+   <div class="page">
+
+
+   <header class="header">
+      <img class="header__logo" src="./images/Vector.svg" alt="project_mesto">
+   </header>
+   <main>
+   <section class="profile">
+      <img class="profile__avatar" src="./images/image.jpg" alt="profile_icon">
+
+      <div class="profile__info">
+         <h1 class="profile__name" id="profilename">Жак-Ив Кусто</h1>
+         <button type="button" class="profile__edit-button">
+            <img src="./images/edit.svg" alt="edit">
+         </button>
+         <p class="profile__status" id="profilestatus">Исследователь океана</p>
+      </div>
+      <button class="profile__add-button" id="profile__edit">
+         <img src="./images/plus.svg" alt="add img">
+      </button>
+   </section>
+
+   <section class="elements">
+      <ul class="elements__cards">
+         <li class="elements__item">
+            <img class="elements__image" src="./images/image.jpg" alt="imagine whatever you want">
+            <div class="elements__description">
+               <h2 class="elements__caption">Проверка временем </h2>
+            <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="heart"></button>
+         </div>
+         </li>
+         <li class="elements__item">
+            <img class="elements__image" src="./images/image.jpg" alt="imagine whatever you want">
+            <div class="elements__description">
+               <h2 class="elements__caption">Проверка временем </h2>
+            <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="heart"></button>
+         </div>
+         </li>
+         <li class="elements__item">
+            <img class="elements__image" src="./images/image.jpg" alt="imagine whatever you want">
+            <div class="elements__description">
+               <h2 class="elements__caption">Проверка временем </h2>
+            <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="heart"></button>
+         </div>
+         </li>
+         <li class="elements__item">
+            <img class="elements__image" src="./images/image.jpg" alt="imagine whatever you want">
+            <div class="elements__description">
+               <h2 class="elements__caption">Проверка временем </h2>
+            <button type="button" class="elements__like"><img src="./images/heart.svg" alt="heart"></button>
+         </div>
+         </li>
+      </ul>
+   </section>
+   </main>
+   <footer class="footer">
+      <p class="footer__text">&copy; 2022 Mesto Russia</p>
+   </footer>
+
+
+   <section class="popup">
+      <div class="popup__container">
+         <button class="popup__close-icon" type="button"><img class="popup__close-img" src="./images/Close Icon.svg" alt="close me pls"></button>
+         <form class="popup__form" novalidate>
+            <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
+            <fieldset class="form">
+                <label class="form__label">
+                    <input type="text" class="form__input form__input_type-name" placeholder="Ваше Имя" value="Жак-Ив Кусто" id="name" minlength="2" maxlength="40" required>
+                </label>
+                <label class="form__label">
+                    <input type="text" class="form__input form__input_type-status" placeholder="Статус" value="Исследователь океана" id="status" required>
+                </label>
+            </fieldset>
+            <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+      </div>
+   </section>
+</div>
+<script src="./scripts/index.js"></script>
+</body>
