@@ -25,13 +25,14 @@
          </button>
          <p class="profile__status" id="profilestatus">Исследователь океана</p>
       </div>
-      <button class="profile__add-button" id="profile__add">
+      <button type="button" class="profile__add-button" id="profile__add">
          <img src="./images/plus.svg" alt="Добавить фото">
       </button>
    </section>
 
    <section class="elements">
       <ul class="elements__cards">
+         <article>
          <li class="elements__item">
             <img class="elements__image" src="./images/card1-min.jpg" alt="Можешь представить всё что захочешь">
             <div class="elements__description">
@@ -39,6 +40,8 @@
             <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="Лайк"></button>
          </div>
          </li>
+      </article>
+      <article>
          <li class="elements__item">
             <img class="elements__image" src="./images/card2-min.jpg" alt="Можешь представить всё что захочешь">
             <div class="elements__description">
@@ -46,6 +49,8 @@
             <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="Лайк"></button>
          </div>
          </li>
+      </article>
+      <article>
          <li class="elements__item">
             <img class="elements__image" src="./images/card3-min.jpg" alt="Можешь представить всё что захочешь">
             <div class="elements__description">
@@ -53,6 +58,8 @@
             <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="Лайк"></button>
          </div>
          </li>
+      </article>
+      <article>
          <li class="elements__item">
             <img class="elements__image" src="./images/card2-min.jpg" alt="Можешь представить всё что захочешь">
             <div class="elements__description">
@@ -60,6 +67,8 @@
             <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="Лайк"></button>
          </div>
          </li>
+      </article>
+      <article>
          <li class="elements__item">
             <img class="elements__image" src="./images/card3-min.jpg" alt="Можешь представить всё что захочешь">
             <div class="elements__description">
@@ -67,6 +76,8 @@
             <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="Лайк"></button>
          </div>
          </li>
+      </article>
+      <article>
          <li class="elements__item">
             <img class="elements__image" src="./images/card1-min.jpg" alt="Можешь представить всё что захочешь">
             <div class="elements__description">
@@ -74,6 +85,7 @@
             <button type="button" class="elements__like"> <img src="./images/heart.svg" alt="Лайк"></button>
          </div>
          </li>
+      </article>
       </ul>
    </section>
    </main>
@@ -85,18 +97,20 @@
    <section class="popup">
       <div class="popup__container">
          <button class="popup__close-icon" type="button"><img class="popup__close-img" src="./images/CloseIcon.svg" alt="Закрыть"></button>
-         <form class="popup__form" novalidate>
-            <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
-            <fieldset class="form">
+         <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
+         <div class="popup__form">
+         <form class="form" name="profileForm" novalidate>
+            <fieldset class="form__fieldset">
                 <label class="form__label">
-                    <input type="text" class="form__input form__input_type-name" placeholder="Ваше Имя" value="Жак-Ив Кусто" id="name" minlength="2" maxlength="40" required>
+                    <input type="text" class="form__input form__input_type_name" placeholder="Ваше Имя" value="Жак-Ив Кусто" name="name" minlength="2" maxlength="40" required>
                 </label>
                 <label class="form__label">
-                    <input type="text" class="form__input form__input_type-status" placeholder="Статус" value="Исследователь океана" id="status" required>
+                    <input type="text" class="form__input form__input_type_status" placeholder="Статус" value="Исследователь океана" name="status" required>
                 </label>
             </fieldset>
             <button class="popup__submit" type="submit">Сохранить</button>
         </form>
+      </div>
       </div>
    </section>
 </div>
