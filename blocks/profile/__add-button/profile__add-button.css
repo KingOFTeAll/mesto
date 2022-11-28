@@ -9,6 +9,9 @@
    margin: 0 0 0 auto;
    padding: 0;
    background-color: #000;
+   background-image: url("../../../images/plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
    opacity: 1;
    transition: opacity .3s ease-in;
 }
@@ -25,6 +28,7 @@
 }
 @media screen and (max-width: 767px) {
    .profile__add-button {
-       margin: 36px 0 0 0;
+      background-image: url("../../../images/addPlusMobile.svg");
+       margin: 34px 0 0 0;
    }
 }

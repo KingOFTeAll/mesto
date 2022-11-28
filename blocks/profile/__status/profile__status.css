@@ -10,16 +10,16 @@
    overflow: hidden;
    white-space: nowrap;
    grid-column: -3 / -1;
-   text-align: center;
+   text-align:left ;
 }
 
 @media screen and (max-width: 767px) {
    .profile__status {
-       max-width: 282px;
-       font-size: 14px;
-       line-height: 17px;
-       align-self: flex-start;
-       text-align:left;
-       margin: 0 0 0 15px;
+      max-width: 282px;
+      font-size: 14px;
+      line-height: 17px;
+      align-self: flex-start;
+      text-align: left;
+      margin: 0 0 0 15px;
    }
 }

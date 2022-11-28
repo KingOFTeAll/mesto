@@ -5,10 +5,13 @@
    line-height: 22px;
    color: #545454;
    margin: 0;
+   box-sizing: border-box;
 }
 
 @media screen and (max-width: 767px) {
    .footer__text {
        font-size: 14px;
+       width: calc(100% - 38px);
+       margin: 0 auto;
    }
 }

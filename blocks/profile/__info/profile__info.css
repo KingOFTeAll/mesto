@@ -1,9 +1,8 @@
 .profile__info {
    display: grid;
    grid-template-columns: 1fr 24px;
-   row-gap: 16px;
-   column-gap: 18px;
-   align-content: end;
+   row-gap: 9px;
+   column-gap: 19px;
 }
 
 @media screen and (max-width: 1023px) {

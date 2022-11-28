@@ -3,13 +3,13 @@ const popupCloseElement = popupElement.querySelector('.popup__close-icon');
 const popupOpenElement = document.querySelector('.profile__edit-button');
 const popupSubmitElement = popupElement.querySelector('.popup__submit');
 //const likeElement = document.querySelector('.elements__like');
-const formPopup = document.querySelector('.popup__form');
+const formPopup = document.querySelector('.form');
 
 let profileName = document.querySelector('.profile__name');
 let profileStatus = document.querySelector('.profile__status');
 
 let inputProfileName = popupElement.querySelector('.form__input_type_name');
-let inputProfileStatus = popupElement.querySelector('.form__input_type_status'); 
+let inputProfileStatus = popupElement.querySelector('.form__input_type_status');
 
 //const toggleLikeElement = function(){
 //   likeElement.classList.toggle('elements__like_active')
@@ -18,16 +18,20 @@ let inputProfileStatus = popupElement.querySelector('.form__input_type_status');
 //   likeElement.classList.remove('elements__like_active')
 //}
 
-const openPopup = function(){
-  popupElement.classList.add('popup_opened');}
+const openPopup = function () {
+   popupElement.classList.add('popup_opened');
+   inputProfileName.value = profileName.textContent
+   inputProfileStatus.value = profileStatus.textContent
+}
 
-  const closePopup = function(){
-   popupElement.classList.remove('popup_opened');}
+const closePopup = function () {
+   popupElement.classList.remove('popup_opened');
+}
 
-const renameingProfileandStatus = function(event){
+const renameingProfileandStatus = function (event) {
 
    profileName.textContent = inputProfileName.value;
-   profileStatus.textContent =inputProfileStatus.value;
+   profileStatus.textContent = inputProfileStatus.value;
    closePopup();
    event.preventDefault();
 }

@@ -5,6 +5,7 @@
    border: 0;
    opacity: 1;
    transition: opacity .3s ease-in;
+   align-self: center;
 }
 
 .elements__like:hover {
