@@ -8,7 +8,7 @@
    align-self: center;
 }
 
-.elements__like:hover {
+.elements__likeF:hover {
    opacity: .5;
    cursor: pointer;
 }

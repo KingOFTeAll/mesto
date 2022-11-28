@@ -10,7 +10,7 @@
    overflow: hidden;
    white-space: nowrap;
    grid-column: -3 / -1;
-   text-align:left ;
+   text-align: left;
 }
 
 @media screen and (max-width: 767px) {

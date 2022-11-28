@@ -10,8 +10,8 @@
 
 @media screen and (max-width: 767px) {
    .footer__text {
-       font-size: 14px;
-       width: calc(100% - 38px);
-       margin: 0 auto;
+      font-size: 14px;
+      width: calc(100% - 38px);
+      margin: 0 auto;
    }
 }
