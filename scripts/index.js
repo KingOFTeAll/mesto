@@ -55,13 +55,14 @@ const MassiveElementsPlaces = [
      name: "and another one",
      link: "https://images-ext-2.discordapp.net/external/9oNCJewC3bJinc79YVkhu1LC-XyX2gqiV6ZCXYexFYs/http/almode.ru/uploads/posts/2021-12/1639080692_8-almode-ru-p-novogodnie-shariki-na-zastavku-8.jpg?width=705&height=441",
    },
-   {
-      name: "Xmas",
-      link: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    },
+   
     {
       name: "another one xmas",
       link: "https://images.unsplash.com/photo-1577309159021-f7c7d66e02c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    },
+    {
+      name: "Xmas",
+      link: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
     },
 
  ];
