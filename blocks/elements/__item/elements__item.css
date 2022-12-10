@@ -2,6 +2,7 @@
    width: 282px;
    height: 362px;
    display: flex;
+   position: relative;
    flex-direction: column;
    border-radius: 10px;
    background-color: #fff;
