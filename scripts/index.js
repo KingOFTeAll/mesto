@@ -4,7 +4,6 @@ const popupPlaceElement = document.getElementById('popup_place');// Добавл
 const popupImageMax = document.getElementById('popup_ImageMax');//Картинка
 
 
-
 const popupCloseElementProfile = popupProfileEditElement.querySelector('.popup__close-icon');//кнопки Закрытия
 const popupCloseElementPlace = popupPlaceElement.querySelector(".popup__close-icon");
 const popupCloseElementImage = popupImageMax.querySelector(".popup__close-icon");
@@ -13,10 +12,9 @@ const popupCloseElementImage = popupImageMax.querySelector(".popup__close-icon")
 const profileEditOpenElement = document.querySelector('.profile__edit-button');//Кнопки открытия
 const profileAddPlaceElement = document.querySelector('.profile__add-button');
 
-
+//Две разные кнопки из разных попапов
 const popupSubmitElement = popupProfileEditElement.querySelector('.form__submit');//кнопка сохранения имени профиля
-const popupAddPlaceElement = popupPlaceElement.querySelector('.form__submit');
-//const likeElement = document.querySelector('.elements__like');
+const popupAddPlaceElement = popupPlaceElement.querySelector('.form__submit');// кнопка сохранения в добавлении карточек
 
 
 const formProfilePopup = popupProfileEditElement.querySelector('.form');//Формочки
@@ -32,11 +30,11 @@ const inputProfileStatus = popupProfileEditElement.querySelector('.form__input_t
 const inputAddPlaceName = popupPlaceElement.querySelector('.form__input_type_Name-Place');
 const inputAddPlaceLink = popupPlaceElement.querySelector('.form__input_type_Link-Place');
 
-const ImgMax = popupImageMax.querySelector(".ImgMax-container__Img");//Фотка в разрешении
-const ImgMaxTitle = popupImageMax.querySelector(".ImgMax-container__caption");
+const imgMax = popupImageMax.querySelector(".ImgMax-container__Img");//Фотка в разрешении
+const imgMaxTitle = popupImageMax.querySelector(".ImgMax-container__caption");
 
-const ElementTemplate = document.querySelector(".template").content;//карточки
-const ElementsList = document.querySelector(".elements__cards");//Список карточкек
+const elementTemplate = document.querySelector(".template").content;//карточки
+const elementsContainer = document.querySelector(".elements__cards");//Список карточкек
 
 const MassiveElementsPlaces = [
    {
@@ -71,9 +69,6 @@ const openPopup = function (popup) {popup.classList.add('popup_opened');}//об�
 
 const closePopup = function (popup) {popup.classList.remove('popup_opened');}//Закрывашки
 
-popupCloseElementProfile.addEventListener('click', () =>{closePopup(popupProfileEditElement)});//Можно сделать какой то массив,пока не знаю как
-popupCloseElementPlace.addEventListener('click', () =>{closePopup(popupPlaceElement)});
-popupCloseElementImage.addEventListener('click', () =>{closePopup(popupImageMax)});
 
 
  function openEditProfile() {//Присвоение значений и открытие попапа профиля
@@ -101,28 +96,36 @@ formProfilePopup.addEventListener('submit', renameingProfileandStatus);
 
 
 const creatElementPlace = function(value){ //make карточки
-   const elementsItem = ElementTemplate.querySelector(".elements__item").cloneNode(true);
-   const ElementsItemImg = elementsItem.querySelector(".elements__image");
+   const elementsItem = elementTemplate.querySelector(".elements__item").cloneNode(true);
+   const elementsItemImg = elementsItem.querySelector(".elements__image");
+   const likeElement = elementTemplate.querySelector('.elements__like');
    elementsItem.querySelector(".elements__caption").textContent = value.name;
-   ElementsItemImg.setAttribute("src", value.link);
-   ElementsItemImg.setAttribute("alt", value.name);
+   elementsItemImg.setAttribute("src", value.link);
+   elementsItemImg.setAttribute("alt", value.name);
 
     elementsItem.querySelector(".elements__trash").addEventListener("click", (event) =>{
       event.target.closest(".elements__item").remove()
    }
     );
-    ElementsItemImg.addEventListener("click", () => {
+    likeElement.addEventListener("click", (event) => {//Оно как то не так вроде работает,я не понимаю почему,не знаю что читать
+      console.log(likeElement);
+      event.target.classList.toggle(".elements__like_active");
+    }
+
+    );
+
+    elementsItemImg.addEventListener("click", () => {
     openPopup(popupImageMax);
-    ImgMax.setAttribute("src", ElementsItemImg.getAttribute("src"));
-    ImgMax.setAttribute("alt", value.name);
-    ImgMaxTitle.textContent = value.name;
+    imgMax.setAttribute("src", elementsItemImg.getAttribute("src"));
+    imgMax.setAttribute("alt", value.name);
+    imgMaxTitle.textContent = value.name;
   }
   );
 
   return elementsItem;
 }
 
-const renderPlaceElement = (value, elements = ElementsList) => { //Создаем карточки по функции выше
+const renderPlaceElement = (value, elements = elementsContainer) => { //Создаем карточки по функции выше
    elements.prepend(creatElementPlace(value));
  };
  
@@ -138,4 +141,4 @@ const renderPlaceElement = (value, elements = ElementsList) => { //Создае�
    closePopup(popupPlaceElement);
  }
  profileAddPlaceElement.addEventListener('click', openPlaceElement);
- popupAddPlaceElement.addEventListener('click', submitAddPlaceElementForm);
+ formPlacePopup.addEventListener('submit', submitAddPlaceElementForm);

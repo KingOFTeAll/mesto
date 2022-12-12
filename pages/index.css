@@ -45,4 +45,6 @@
 @import url(../blocks/ImgMax-container/ImgMax-container.css);
 @import url(../blocks/ImgMax-container/__caption/ImgMax-container__caption.css);
 @import url(../blocks/ImgMax-container/__Img/ImgMax-container__Img.css);
+@import url(../blocks/popup/_type_ImageMax/popup_type_ImageMax.css);
+
 

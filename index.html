@@ -59,16 +59,16 @@
                   alt="Закрыть"></button>
             <h2 class="popup__title">Редактировать&nbsp;профиль</h2>
             <form class="form" name="profileForm" novalidate>
-               <fieldset class="form__fieldset">
+               <div class="form__fieldset">
                   <label class="form__label">
                      <input type="text" class="form__input form__input_type_name" placeholder="Ваше Имя"
-                        value="Жак-Ив Кусто" name="profile_name" minlength="2" maxlength="40" required>
+                        value="" name="profile_name" minlength="2" maxlength="40" required>
                   </label>
                   <label class="form__label">
                      <input type="text" class="form__input form__input_type_status" placeholder="Статус"
-                        value="Исследователь океана" name="profile_status" required>
+                        value="" name="profile_status" required>
                   </label>
-               </fieldset>
+               </div>
                <button class="form__submit" type="submit">Сохранить</button>
             </form>
          </div>
@@ -80,20 +80,20 @@
             <button class="popup__close-icon" type="button"><img class="popup__close-img" src="./images/CloseIcon.svg"alt="Закрыть"></button>
             <h2 class="popup__title">Новое&nbsp;место</h2>
             <form class="form" name="placeForm" novalidate>
-               <fieldset class="form__fieldset">
+               <div class="form__fieldset">
                   <label class="form__label">
                      <input type="text" class="form__input form__input_type_Name-Place" placeholder="Название" name="new_place" minlength="2" maxlength="30" required>
                  </label>
                  <label class="form__label">
                      <input type="url" class="form__input form__input_type_Link-Place" placeholder="Ссылка на картинку" name="place_link" required>
                  </label>
-               </fieldset>
+               </div>
                <button class="form__submit" type="submit">Создать</button>
             </form>
          </div>
       </section>
 
-      <section class="popup" id="popup_ImageMax">
+      <section class="popup popup_type_ImageMax" id="popup_ImageMax">
          <figure class="ImgMax-container">
            <img class="ImgMax-container__Img" src="#" alt="">
            <figcaption class="ImgMax-container__caption"></figcaption>
@@ -103,7 +103,6 @@
 
    </div>
    <script src="./scripts/index.js"></script>
-   <script src="./scripts/Massive.js"></script>
 </body>
 
 </html>
