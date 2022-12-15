@@ -36,7 +36,7 @@ const imgMaxTitle = popupImageMax.querySelector(".ImgMax-container__caption");
 const elementTemplate = document.querySelector(".template").content;//карточки
 const elementsContainer = document.querySelector(".elements__cards");//Список карточкек
 
-const MassiveElementsPlaces = [
+const massiveElementsPlaces = [
    {
      name: "and another one",
      link: "https://images.unsplash.com/photo-1509042283213-f7167abd77f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
@@ -69,7 +69,10 @@ const openPopup = function (popup) {popup.classList.add('popup_opened');}//об�
 
 const closePopup = function (popup) {popup.classList.remove('popup_opened');}//Закрывашки
 
-
+popupElement.forEach((popup) => { //Закрыть все попапы
+  popup.addEventListener("click", (event) => {
+    if (event.target.classList.contains("popup__close-img")){closePopup(popup);} });  
+  });
 
  function openEditProfile() {//Присвоение значений и открытие попапа профиля
    openPopup(popupProfileEditElement);
@@ -98,7 +101,7 @@ formProfilePopup.addEventListener('submit', renameingProfileandStatus);
 const creatElementPlace = function(value){ //make карточки
    const elementsItem = elementTemplate.querySelector(".elements__item").cloneNode(true);
    const elementsItemImg = elementsItem.querySelector(".elements__image");
-   const likeElement = elementTemplate.querySelector('.elements__like');
+   const likeElement = elementsItem.querySelector('.elements__like');
    elementsItem.querySelector(".elements__caption").textContent = value.name;
    elementsItemImg.setAttribute("src", value.link);
    elementsItemImg.setAttribute("alt", value.name);
@@ -107,9 +110,8 @@ const creatElementPlace = function(value){ //make карточки
       event.target.closest(".elements__item").remove()
    }
     );
-    likeElement.addEventListener("click", (event) => {//Оно как то не так вроде работает,я не понимаю почему,не знаю что читать
-      console.log(likeElement);
-      event.target.classList.toggle(".elements__like_active");
+    likeElement.addEventListener("click", (event) => {
+      event.target.classList.toggle("elements__like_active");
     }
 
     );
@@ -129,7 +131,7 @@ const renderPlaceElement = (value, elements = elementsContainer) => { //Созд
    elements.prepend(creatElementPlace(value));
  };
  
- MassiveElementsPlaces.forEach((element) => renderPlaceElement(element));
+ massiveElementsPlaces.forEach((element) => renderPlaceElement(element));
 
 
  function submitAddPlaceElementForm(event) {
