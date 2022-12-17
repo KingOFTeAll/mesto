@@ -2,8 +2,8 @@
 
 const popupElements = document.querySelectorAll('.popup');//Массив наших попапов
 
-const popupProfileEditElement = document.querySelector('.popup__profile');//Редактор имени
-const popupPlaceElement = document.querySelector('.popup__place');// Добавление Места
+const popupProfileEditElement = document.querySelector('.popup_profile');//Редактор имени
+const popupPlaceElement = document.querySelector('.popup_place');// Добавление Места
 const popupImageMax = document.querySelector('.popup_type_ImageMax');//Картинка
 
 
