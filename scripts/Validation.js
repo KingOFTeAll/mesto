@@ -1,6 +1,6 @@
 const checkInputValidity = (input, config) => {
-   const error = document.querySelector(`#${input.id}-error`); // ревью писали,что нужно именно name, а не id, но сейчас профитнее убать одно из этого и строить всё или на id или на name
-   // в спринте такого не было но скорее всего можно использовать input.name пока всё оттуда
+   const error = document.querySelector(`#${input.id}-error`); 
+
    if (input.validity.valid) {
       error.textContent = "";
       error.classList.remove(config.errorClass);
@@ -13,21 +13,27 @@ const checkInputValidity = (input, config) => {
    }
 };
 
+const makeButtonStateDisabled = (button, config) => {
+   button.classList.add(config.disabledSubmitButton);
+   button.disabled = true;
+}
+
+const makeButtonStateEnabled = (button, config) => {
+   button.classList.remove(config.disabledSubmitButton);
+   button.disabled = false;
+}
+
 const toggleButtonState = (inputs, button, config) => {
+
    const formIsValid = inputs.every((input) => input.validity.valid); //проверяем что каждый инпут валидный
 
-   if (formIsValid) {
-      button.classList.remove(config.disabledSubmitButton);
-      button.disabled = false;
-   } else {
-      button.classList.add(config.disabledSubmitButton);
-      button.disabled = true;
-   }
+   if (formIsValid)
+   {makeButtonStateEnabled(button, config);}
+   else{ makeButtonStateDisabled(button, config);}
 };
 
-const enableValidation = (config) => {
-   const { formSelector, inputSelector, submitButtonSelector, ...restConfig } =
-      config;
+const enableValidation = () => {
+   const { formSelector, inputSelector, submitButtonSelector, ...restConfig } = config;
 
    const forms = [...document.querySelectorAll(formSelector)];
 
@@ -35,10 +41,12 @@ const enableValidation = (config) => {
       const inputs = [...form.querySelectorAll(inputSelector)];
       const button = form.querySelector(submitButtonSelector);
 
+
+      toggleButtonState(inputs, button, restConfig);
+
       form.addEventListener("submit", (evt) => {
          evt.preventDefault();
-         button.disabled = true;
-         button.classList.add(config.disabledSubmitButton);
+         toggleButtonState(inputs, button, restConfig);
       });
 
       inputs.forEach((input) => {
@@ -47,10 +55,11 @@ const enableValidation = (config) => {
             toggleButtonState(inputs, button, restConfig);
          });
       });
+     
    });
 };
 
-const config = { // я тут немного переделал названия т.к. у меня названия классов другие, и форма это самостоятельный элемент
+const config = { 
    formSelector: ".form",
    inputSelector: ".form__input",
    submitButtonSelector: ".form__submit",
@@ -59,4 +68,4 @@ const config = { // я тут немного переделал названия
    errorClass: "form__error_visible",
 };
 
-enableValidation(config);
+enableValidation(config);// Заккоментить 
