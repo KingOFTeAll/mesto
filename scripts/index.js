@@ -1,4 +1,6 @@
+// Тут мог бы быть "import massiveElementsPlaces from "./Massivecards";"
 const popupElement = document.querySelectorAll('.popup');//Массив наших попапов
+
 const popupProfileEditElement = document.getElementById('popup_profile');//Редактор имени
 const popupPlaceElement = document.getElementById('popup_place');// Добавление Места
 const popupImageMax = document.getElementById('popup_ImageMax');//Картинка
@@ -37,42 +39,64 @@ const elementTemplate = document.querySelector(".template").content;//карто
 const elementsContainer = document.querySelector(".elements__cards");//Список карточкек
 
 const massiveElementsPlaces = [
+  {
+    name: "and another one",
+    link: "https://images.unsplash.com/photo-1509042283213-f7167abd77f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+  },
+  {
+    name: "and another one",
+    link: "https://images-ext-1.discordapp.net/external/ejX3UreZq40TrHXWSGkylFxaEtoqbYi5BY-Iszo_GGU/https/placepic.ru/wp-content/uploads/2018/12/Holidays_Christmas_402342.jpg?width=665&height=449",
+  },
+  {
+    name: "and another one",
+    link: "https://images-ext-1.discordapp.net/external/QdlMl3eCE1Vfn5hA9UwD7SQBCQ_DDfbjkQFEYEjiJ50/https/ptoday.ru/wp-content/uploads/2020/12/163bd4a37fbf445.jpg?width=705&height=441",
+  },
+  {
+    name: "and another one",
+    link: "https://images-ext-2.discordapp.net/external/9oNCJewC3bJinc79YVkhu1LC-XyX2gqiV6ZCXYexFYs/http/almode.ru/uploads/posts/2021-12/1639080692_8-almode-ru-p-novogodnie-shariki-na-zastavku-8.jpg?width=705&height=441",
+  },
+  
    {
-     name: "and another one",
-     link: "https://images.unsplash.com/photo-1509042283213-f7167abd77f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+     name: "another one xmas",
+     link: "https://images.unsplash.com/photo-1577309159021-f7c7d66e02c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
    },
    {
-     name: "and another one",
-     link: "https://images-ext-1.discordapp.net/external/ejX3UreZq40TrHXWSGkylFxaEtoqbYi5BY-Iszo_GGU/https/placepic.ru/wp-content/uploads/2018/12/Holidays_Christmas_402342.jpg?width=665&height=449",
+     name: "Xmas",
+     link: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
    },
-   {
-     name: "and another one",
-     link: "https://images-ext-1.discordapp.net/external/QdlMl3eCE1Vfn5hA9UwD7SQBCQ_DDfbjkQFEYEjiJ50/https/ptoday.ru/wp-content/uploads/2020/12/163bd4a37fbf445.jpg?width=705&height=441",
-   },
-   {
-     name: "and another one",
-     link: "https://images-ext-2.discordapp.net/external/9oNCJewC3bJinc79YVkhu1LC-XyX2gqiV6ZCXYexFYs/http/almode.ru/uploads/posts/2021-12/1639080692_8-almode-ru-p-novogodnie-shariki-na-zastavku-8.jpg?width=705&height=441",
-   },
-   
-    {
-      name: "another one xmas",
-      link: "https://images.unsplash.com/photo-1577309159021-f7c7d66e02c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    },
-    {
-      name: "Xmas",
-      link: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    },
 
- ];
+];
 
 const openPopup = function (popup) {popup.classList.add('popup_opened');}//общая функция открытия попапа
 
-const closePopup = function (popup) {popup.classList.remove('popup_opened');}//Закрывашки
+const closePopup = function (popup) {
+  popup.classList.remove('popup_opened');
+  document.addEventListener("keyup", handleKeyUpEscape);
+}//Закрывашки
 
 popupElement.forEach((popup) => { //Закрыть все попапы
   popup.addEventListener("click", (event) => {
     if (event.target.classList.contains("popup__close-img")){closePopup(popup);} });  
   });
+
+  const closeinOverlay = (evt) => { //оверлейчик
+    if (evt.target == evt.currentTarget) {
+      closePopup(evt.currentTarget);
+    }
+  };
+  
+
+  const handleKeyUpEscape = (evt) => {   //Закрытие попапа нажатием на Esc
+    if (evt.key === "Escape") {
+      const openedPopup = document.querySelector(".popup_opened");
+      closePopup(openedPopup);
+    }
+  };
+
+  popupProfileEditElement.addEventListener("click", closeinOverlay);
+  popupPlaceElement.addEventListener("click", closeinOverlay);
+  popupImageMax.addEventListener("click", closeinOverlay);
+
 
  function openEditProfile() {//Присвоение значений и открытие попапа профиля
    openPopup(popupProfileEditElement);

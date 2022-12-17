@@ -48,3 +48,14 @@
 @import url(../blocks/popup/_type_ImageMax/popup_type_ImageMax.css);
 
 
+/*valid*/
+@import url(../blocks/form/__submit/_disabled/form__submit_disabled.css);
+@import url(../blocks/form/__input/_type-error/form__input_type-error.css);
+@import url(../blocks/form/__error/form__error.css);/* В макете, если сверяться с выводами ошибок,оно должно быть ниже, но тогда двустрочные ошибки не помещаются и закрываются следующим инпутом */
+@import url(../blocks/form/__error/_visible/form__error_visible.css);
+
+
+
+
+
+
