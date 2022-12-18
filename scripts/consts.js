@@ -27,7 +27,7 @@
 
 // ];
 
-//export const config = {
+// export const config = {
 //   formSelector: ".form",
 //   inputSelector: ".form__input",
 //   submitButtonSelector: ".form__submit",
@@ -35,4 +35,3 @@
 //   inputErrorSelector: "form__input_type-error",
 //   errorClass: "form__error_visible",
 // };
- // я хотел нормально прописать "export default massiveElementsPlaces;" но оно не работает
