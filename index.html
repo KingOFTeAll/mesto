@@ -20,14 +20,14 @@
         <section class="profile">
           <img
             class="profile__avatar"
-            src="./images/santa.avif"
+            src="./images/mid-journey.avif"
             alt="иконка профиля"
           />
 
           <div class="profile__info">
-            <h1 class="profile__name" id="profilename">Дед Мороз</h1>
+            <h1 class="profile__name" id="profilename">Midjourney</h1>
             <button type="button" class="profile__edit-button"></button>
-            <p class="profile__status" id="profilestatus">Готовлюсь приносить подарки</p><!--Если автоформатировать то он переносит текст инпута в центр -->
+            <p class="profile__status" id="profilestatus">the best neural network ever</p><!--Если автоформатировать то он переносит текст инпута в центр -->
           </div>
           <button
             type="button"
@@ -76,13 +76,13 @@
                   placeholder="Ваше Имя"
                   value="##"
                   name="profile_name"
-                  id="name-input"
+                  id="input-name"
                   minlength="2"
                   maxlength="40"
                   required
                 />
 
-                <span class="form__error" id="name-input-error"></span>
+                <span class="form__error input-name-error" ></span>
               </label>
               <label class="form__label">
                 <input
@@ -91,14 +91,14 @@
                   placeholder="Статус"
                   value="##"
                   name="profile_status"
-                  id="job-input"
+                  id="input-status"
                   minlength="2"
                   maxlength="300"
                   required
                 />
-                <!--Тут важный момент:У меня валидация запускается сразу при загрузке страницы и срабатывает на это value,а не подтягиваемое при открытии попапа, а у меня проблема с импортами-->
+                
 
-                <span class="form__error" id="job-input-error"></span>
+                <span class="form__error input-status-error"></span>
               </label>
             </div>
             <button class="form__submit" type="submit">Сохранить</button>
@@ -125,13 +125,13 @@
                   class="form__input form__input_type_Name-Place"
                   placeholder="Название"
                   name="new_place"
-                  id="card-name-input"
+                  id="input-img-title"
                   minlength="2"
                   maxlength="30"
                   required
                 />
 
-                <span class="form__error" id="card-name-input-error"></span>
+                <span class="form__error input-img-title-error"></span>
               </label>
               <label class="form__label">
                 <input
@@ -139,11 +139,11 @@
                   class="form__input form__input_type_Link-Place"
                   placeholder="Ссылка на картинку"
                   name="place_link"
-                  id="card-link-input"
+                  id="input-link"
                   required
                 />
 
-                <span class="form__error" id="card-link-input-error"></span>
+                <span class="form__error input-link-error"></span>
               </label>
             </div>
             <button class="form__submit" type="submit">Создать</button>
@@ -165,9 +165,9 @@
         </figure>
       </section>
     </div>
-    <script src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/ind.js"></script>
     <!--type="module"-->
-    <script src="./scripts/Validation.js"></script>
-    <!-- <script  src="./scripts/consts.js"></script> -->
+    <!--<script type="module" src="./scripts/Validation.js"></script>
+    <script  src="./scripts/consts.js"></script> -->
   </body>
 </html>
