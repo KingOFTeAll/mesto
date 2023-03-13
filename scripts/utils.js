@@ -5,11 +5,11 @@ const imgMaxPopup = document.querySelector('.popup_type_ImageMax'),
       imgMaxPopupTitle = imgMaxPopup.querySelector('.ImgMax-container__caption');
 
 function showPopupImgCard(img, caption) {
-  openPopup(imgMaxPopup);
-
   imgMaxPopupImage.src = img;
   imgMaxPopupImage.alt = `${caption}.`;
   imgMaxPopupTitle.textContent = caption;
+
+  openPopup(imgMaxPopup);
 }
 
 export { showPopupImgCard }

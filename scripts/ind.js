@@ -41,11 +41,9 @@ function handleEscape(evt) {
 
 function handleCloseByClick(evt){
    
-    if (
-      evt.target == evt.currentTarget ||
-      evt.target.classList.contains("popup__close-img")
-    ) {
-      closePopup(evt.currentTarget);
+  if ((evt.target.classList.contains('popup_opened')) || (evt.target.classList.contains('popup__close-img')))
+  {
+    closePopup(document.querySelector('.popup_opened'));
     }
   }
 
@@ -55,11 +53,11 @@ function handleCardFormSubmit(evt) {
     link: all.inputAddPlaceLink.value
   }
 
-  evt.target.reset();
   all.addCardFormValidator.disableSubmitButton();
 
   renderCard(createCard(cardData, all.cardSetting));
   closePopup(all.popupPlaceElement);
+  evt.target.reset();
 }
 
 function handleProfileFormSubmit(evt) {
@@ -82,13 +80,6 @@ function openProfileEditPopup(evt) {
 }
 
 
-all.popupElements.forEach((popup) => {
-  popup.addEventListener('mousedown', (evt) => {
-    if ((evt.target.classList.contains('popup_opened')) || (evt.target.classList.contains('popup__close-img'))) {
-      closePopup(popup)
-    }
-  })
-})
 
 all.profileEditOpenElement.addEventListener('click', openProfileEditPopup);
 
