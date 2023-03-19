@@ -1,4 +1,4 @@
-import { openPopup } from './ind.js';
+import { openPopup } from './index.js';
 
 const imgMaxPopup = document.querySelector('.popup_type_ImageMax'),
       imgMaxPopupImage = imgMaxPopup.querySelector('.ImgMax-container__Img'),

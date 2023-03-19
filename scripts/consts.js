@@ -52,6 +52,7 @@ export const  popupElements = document.querySelectorAll(".popup"),
               profileStatus = document.querySelector(".profile__status"), // Статус
               inputProfileName = popupProfileEditElement.querySelector(".form__input_type_name"),
               inputProfileStatus = popupProfileEditElement.querySelector(".form__input_type_status"),
+              formInputList = document.querySelectorAll('.form__input'),//почти - массив инпутов
               popupImageMax = document.querySelector(".popup_type_ImageMax"), //Картинка
               profileAddPlaceElement = document.querySelector(".profile__add-button"),
               popupAddPlaceElement = popupPlaceElement.querySelector(".form__submit"),// кнопка сохранения в добавлении карточек
