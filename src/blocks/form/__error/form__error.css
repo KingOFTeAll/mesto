@@ -1,0 +1,10 @@
+.form__error {
+   color: #f00;
+   height: 30px; /* В макете, если сверяться с выводами ошибок,оно должно быть ниже, но тогда двустрочные ошибки не помещаются и закрываются следующим инпутом */
+   /*margin-top: 4px;*/
+   font-style: normal;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 15px;
+   vertical-align: middle;
+}

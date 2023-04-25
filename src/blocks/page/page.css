@@ -1,0 +1,17 @@
+.page {
+   min-width: 320px;
+   max-width: 1280px;
+   padding-top: 45px;
+   padding-bottom: 60px;
+   align-self: center;
+   margin: 0 auto;
+   font-family: 'Inter', sans-serif;
+   color: white;
+}
+
+@media screen and (max-width: 767px) {
+   .page {
+      padding-top: 28px;
+      padding-bottom: 36px;
+   }
+}

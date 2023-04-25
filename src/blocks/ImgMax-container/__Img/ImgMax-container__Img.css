@@ -1,0 +1,6 @@
+.ImgMax-container__Img {
+   vertical-align: bottom;
+   box-sizing: border-box;
+   max-height: 75vh;
+   max-width: 75vw;
+}

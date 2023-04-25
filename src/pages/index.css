@@ -1,0 +1,61 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
+@import url(../blocks/root/root.css);
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__status/profile__status.css);
+
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__caption/elements__caption.css);
+@import url(../blocks/elements/__cards/elements__cards.css);
+@import url(../blocks/elements/__description/elements__description.css);
+@import url(../blocks/elements/__image/elements__image.css);
+@import url(../blocks/elements//__item/elements__item.css);
+@import url(../blocks/elements/__like/elements__like.css);
+@import url(../blocks/elements/__like/_active/elements__like_active.css);
+@import url(../blocks/elements/__trash/elements__trash.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
+
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__label/form__label.css);
+@import url(../blocks/form/__fieldset/form__fieldset.css);
+@import url(../blocks/form/__submit/form__submit.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__close-icon/popup__close-icon.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+
+@import url(../blocks/popup/__close-img/popup__close-img.css);
+
+@import url(../blocks/ImgMax-container/ImgMax-container.css);
+@import url(../blocks/ImgMax-container/__caption/ImgMax-container__caption.css);
+@import url(../blocks/ImgMax-container/__Img/ImgMax-container__Img.css);
+@import url(../blocks/popup/_type_ImageMax/popup_type_ImageMax.css);
+
+
+/*valid*/
+@import url(../blocks/form/__submit/_disabled/form__submit_disabled.css);
+@import url(../blocks/form/__input/_type-error/form__input_type-error.css);
+@import url(../blocks/form/__error/form__error.css);/* В макете, если сверяться с выводами ошибок,оно должно быть ниже, но тогда двустрочные ошибки не помещаются и закрываются следующим инпутом */
+@import url(../blocks/form/__error/_visible/form__error_visible.css);
+
+
+
+
+
+
