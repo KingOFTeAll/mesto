@@ -14,7 +14,7 @@ const userInfo = new UserInfo({
 }); 
 
 function createCard(cardData){
-  console.log(cardData);
+  
   return new Card({ 
       cardData, 
       handleCardClick: () => {

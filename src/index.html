@@ -19,12 +19,13 @@
       </header>
       <main>
         <section class="profile">
+          <div class="profile__avatar-edit">
           <img
             class="profile__avatar"
             src="<%=require('./images/card1-min.jpg')%>"
             alt="иконка профиля"
           >
-
+        </div>
           <div class="profile__info">
             <h1 class="profile__name" id="profilename">Midjourney</h1>
             <button type="button" class="profile__edit-button"></button>
@@ -42,7 +43,7 @@
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__text">&copy; 2022 KingoftheAll</p>
+        <p class="footer__text">&copy; 2023 KingoftheAll</p>
       </footer>
 
       <!-- ImagePlaces-->
@@ -52,7 +53,10 @@
           <img class="elements__image" src="#" alt="" />
           <div class="elements__description">
             <h2 class="elements__caption"></h2>
+            <div class="elements__like-container">
             <button class="elements__like" type="button"></button>
+            <p class="elements__like-counter">0</p>
+          </div>
           </div>
         </li>
       </template>
@@ -82,7 +86,6 @@
                   maxlength="40"
                   required
                 />
-
                 <span class="form__error input-name-error" ></span>
               </label>
               <label class="form__label">
@@ -97,8 +100,6 @@
                   maxlength="300"
                   required
                 >
-                
-
                 <span class="form__error input-status-error"></span>
               </label>
             </div>
@@ -131,7 +132,6 @@
                   maxlength="30"
                   required
                 >
-
                 <span class="form__error input-img-title-error"></span>
               </label>
               <label class="form__label">
@@ -143,7 +143,6 @@
                   id="input-link"
                   required
                 >
-
                 <span class="form__error input-link-error"></span>
               </label>
             </div>
@@ -152,6 +151,7 @@
         </div>
       </div>
 
+      <!--popup img max-->
       <div class="popup popup_type_ImageMax" id="popup_ImageMax">
         <figure class="ImgMax-container">
           <img class="ImgMax-container__Img" src="#" alt="" />
@@ -165,6 +165,51 @@
           </button>
         </figure>
       </div>
+
+      <!--popup avatar-->
+      <div class="popup popup_avatar">
+        <div class="popup__container">
+          <button class="popup__close-icon" type="button">
+            <img
+              class="popup__close-img"
+              src="<%=require('./images/CloseIcon.svg')%>"
+              alt="Закрыть"
+            >
+          </button>
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form name="avatar" class="form form_avatar" novalidate>
+                <input
+                  type="url"
+                  class="form__input form__input_type_Avatar"
+                  placeholder="Ссылка на картинку"
+                  name="avatar"
+                  id="input-avatar"
+                  required
+                >
+                <span class="form__error input-avatar-error"></span>
+                <button class="form__submit" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+      <!--popup question-->
+      <div class="popup popup_quest">
+        <div class="popup__container">
+          <button class="popup__close-icon" type="button">
+            <img
+              class="popup__close-img"
+              src="<%=require('./images/CloseIcon.svg')%>"
+              alt="Закрыть"
+            >
+          </button>
+            <h2 class="popup__title">Вы&nbsp;уверены?</h2><!--Давай, давай! Мы же миллионеры, мы же карточки на принтере печатаем-->
+            <form name="question" class="form form__quest" novalidate>
+                <button type="submit" class="form__submit">Да</button>
+            </form>
+        </div>
+    </div>
+
+
     </div>
   </body>
 </html>
