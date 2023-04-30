@@ -27,9 +27,9 @@
           >
         </div>
           <div class="profile__info">
-            <h1 class="profile__name" id="profilename">Midjourney</h1>
+            <h1 class="profile__name" id="profilename">Обновление...</h1>
             <button type="button" class="profile__edit-button"></button>
-            <p class="profile__status" id="profilestatus">the best neural network ever</p>
+            <p class="profile__status" id="profilestatus">Обновление...</p>
           </div>
           <button
             type="button"
@@ -94,7 +94,7 @@
                   class="form__input form__input_type_status"
                   placeholder="Статус"
                   value="##"
-                  name="userStatus"
+                  name="userData"
                   id="input-status"
                   minlength="2"
                   maxlength="300"
@@ -168,7 +168,7 @@
 
       <!--popup avatar-->
       <div class="popup popup_avatar">
-        <div class="popup__container">
+        <div class="popup__container popup__container-avatar">
           <button class="popup__close-icon" type="button">
             <img
               class="popup__close-img"
@@ -177,16 +177,21 @@
             >
           </button>
             <h2 class="popup__title">Обновить аватар</h2>
-            <form name="avatar" class="form form_avatar" novalidate>
+            <form name="userAvatar" class="form form_avatar" novalidate>
+              <div class="form__fieldset">
+                <label class="form__label">
                 <input
                   type="url"
                   class="form__input form__input_type_Avatar"
                   placeholder="Ссылка на картинку"
-                  name="avatar"
+                  name="userAvatar"
                   id="input-avatar"
                   required
                 >
+              
                 <span class="form__error input-avatar-error"></span>
+              </label>
+              </div>
                 <button class="form__submit" type="submit">Сохранить</button>
             </form>
         </div>
@@ -194,7 +199,7 @@
 
       <!--popup question-->
       <div class="popup popup_quest">
-        <div class="popup__container">
+        <div class="popup__container popup__container-question">
           <button class="popup__close-icon" type="button">
             <img
               class="popup__close-img"
@@ -202,9 +207,9 @@
               alt="Закрыть"
             >
           </button>
-            <h2 class="popup__title">Вы&nbsp;уверены?</h2><!--Давай, давай! Мы же миллионеры, мы же карточки на принтере печатаем-->
-            <form name="question" class="form form__quest" novalidate>
-                <button type="submit" class="form__submit">Да</button>
+            <h2 class="popup__title popup__title-quest">Вы&nbsp;уверены?</h2><!--Давай, давай! Мы же миллионеры, мы же карточки на принтере печатаем-->
+            <form name="question" class="form" novalidate>
+                <button type="submit" class="form__submit form__submit-quest">Да</button>
             </form>
         </div>
     </div>

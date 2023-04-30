@@ -13,6 +13,7 @@ export class Card {
       this._handleLikeClick = handleLikeClick;
       this._handleDeleteClick = handleDeleteClick;
       this._setEventListeners();
+      
   };
 
   _getCardTemplate(templateSelector) {
@@ -24,50 +25,60 @@ export class Card {
   };
   
   _createCard() {
-      this._cardImage.src = this._cardData.link;
-      this._cardImage.alt = this._cardData.name;
-      this._cardTitle.textContent = this._cardData.name;
-      if(this._cardData.likes.lenght) {
+    this._cardImage.src = this._cardData.link;
+    this._cardImage.alt = this._cardData.name;
+    this._cardTitle.textContent = this._cardData.name;
+
+    if(this._cardData.likes.lenght) {
         this._heartMeter.textContent = this._cardData.likes.lenght;
     }
-      return this._card
-  };
+    return this._card
+};
 
-  _deleteCard() { 
-      this._card.remove();
-  };
+deleteCard() { 
+    this._card.remove();
+};
 
-  _toggleCardLike() {
-      return this._cardData.likes.find(item => item._id === this._userId);
-  };
+isLiked() {
+    return this._cardData.likes.find(item => item._id === this._userId);
+};
 
-  _updateLikeMeter() {
+_increaseLikeCounter() {
     this._heartMeter.textContent = this._cardData.likes.length;
     if (this.isLiked()) {
-        this._cardLikeButton.classList.add('card__heart_active');
+        this._cardLikeButton.classList.add('elements__like_active');
     }
     else {
-        this._cardLikeButton.classList.remove('card__heart_active');
+        this._cardLikeButton.classList.remove('elements__like_active');
     }
 };
 
 addLike(data) {
     this._cardData = data;
-    this._updateLikeMeter();
+    this._increaseLikeCounter();
 };
 
-  _setEventListeners() {
-      this._cardLikeButton.addEventListener('click', () => this. _toggleCardLike());
-      this._cardDeleteButton.addEventListener('click', () => this._deleteCard());
-      this._cardImage.addEventListener('click', () => {
-          this._handleCardClick({
-            name: this._cardData.name,
-            link: this._cardData.link
-          })
-      });
-  };
 
-  getCard() {
-      return this._cardElement
-  };
+_setEventListeners() {
+    this._cardLikeButton.addEventListener('click', () => this._handleLikeClick(this));
+    this._cardDeleteButton.addEventListener('click', () => this._handleDeleteClick(this));
+    this._cardImage.addEventListener('click', () => {
+        this._handleCardClick({
+          name: this._cardData.name,
+          link: this._cardData.link
+        })
+    });
+};
+
+getCard() {
+    if(this._cardData.owner._id !== this._userId) {
+        this._cardDeleteButton.classList.add('elements__trash_invisible');
+    }
+    this._increaseLikeCounter();
+    return this._cardElement
+};
+
+getCardId() {
+    return this._cardData._id
+};
 }

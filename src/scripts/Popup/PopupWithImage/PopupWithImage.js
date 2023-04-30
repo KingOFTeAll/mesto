@@ -9,7 +9,6 @@ export class PopupWithImage extends Popup {
 
 
     showPopupImgCard(cardData) {
-        console.log(cardData);
         this._popupImage.src = cardData.link;
         this._popupImage.alt = `${cardData.name}.`;
         this._popupCaption.textContent = cardData.name;

@@ -51,58 +51,17 @@
 /*valid*/
 @import url(../blocks/form/__submit/_disabled/form__submit_disabled.css);
 @import url(../blocks/form/__input/_type-error/form__input_type-error.css);
-@import url(../blocks/form/__error/form__error.css);/* В макете, если сверяться с выводами ошибок,оно должно быть ниже, но тогда двустрочные ошибки не помещаются и закрываются следующим инпутом */
+@import url(../blocks/form/__error/form__error.css);
 @import url(../blocks/form/__error/_visible/form__error_visible.css);
 
+/*PR9*/
+@import url(../blocks/profile/__avatar/profile_avatar-edit.css);
+@import url(../blocks/elements/__like/elements__like-counter.css);
+@import url(../blocks/elements/__like/elements__like-container.css);
+@import url(../blocks/popup/__container/popup__container-avatar.css);
+@import url(../blocks/popup/__container/popup__container-question.css);
+@import url(../blocks/popup/__title/popup__title-quest.css);
+@import url(../blocks/form/__submit/form__submit-quest.css);
 
-.profile__avatar-edit{
-  position: relative;
-}
+@import url(../blocks/elements/__trash/_invisible/elements__trash_invisible.css);
 
-.profile__avatar-edit::before {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.2s linear;
-  content: '';
-  position: absolute;
-}
-
-.profile__avatar-edit::after {
-  content: '';
-  position: absolute;
-}
-  
-.profile__avatar-edit:hover::before {
-  background-color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-}
-  
-.profile__avatar-edit:hover::after {
-  width: 26px;
-  height: 26px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-image: url('../images/avatar-edit.svg');
-  opacity: 1;
-}
-
-
-.elements__like-counter{
-    padding: 0;
-    margin: 3px 0 0;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-}
-.elements__trash_visible{display: none;}
-.elements__like-container{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.form__quest{  margin-top: 14px;}
