@@ -1,4 +1,4 @@
-import { Popup } from '../Popup.js'
+import { Popup } from './Popup.js'
 
 export class PopupWithForm extends Popup {
     constructor({ popupSelector, submitFunction, formSetting }) {
@@ -6,7 +6,8 @@ export class PopupWithForm extends Popup {
         this._submitFunction = submitFunction;
         this._inputList = this._popup.querySelectorAll(formSetting.inputSelector);
         this._popupForm = this._popup.querySelector(formSetting.formSelector);
-        this._activeButtoninfo = document.querySelector(`${popupSelector} ${formSetting.submitButtonSelector}`);
+        this._activeButtoninfo = this._popup.querySelector(formSetting.submitButtonSelector)
+        this._buttonText = this._popup.querySelector(formSetting.submitButtonSelector).textContent
     }
 
     _getInputValues() {
@@ -32,7 +33,7 @@ export class PopupWithForm extends Popup {
         if(loading) {
             this._activeButtoninfo.textContent = 'Сохранение...';
         } else {
-            this._activeButtoninfo.textContent = 'Сохранить';
+            this._activeButtoninfo.textContent = this._buttonText;
         }
 };
 

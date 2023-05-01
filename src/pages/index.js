@@ -1,13 +1,13 @@
 import './index.css';
 import { formSetting, profileEditOpenElement, profileAddPlaceOpenElement, cardSelectors, userInfoSelectors, profileAvatarOpenElement, popupSelectors } from '../consts/consts.js';
-import { Card } from '../scripts/Card.js';
-import { FormValidator } from '../scripts/FormValidator.js';
-import { Section } from '../scripts/Section.js';
-import { UserInfo } from '../scripts/UserInfo.js';
-import { PopupWithImage } from '../scripts/Popup/PopupWithImage/PopupWithImage.js';
-import { PopupWithForm } from '../scripts/Popup/PopupWithForm/PopupWithForm.js';
-import { PopupWithSubmit } from '../scripts/Popup/PopupWithSubmit/PopupWithSubmit.js'
-import { Api } from '../scripts/Api.js'
+import { Card } from '../components/Card.js';
+import { FormValidator } from '../components/FormValidator.js';
+import { Section } from '../components/Section.js';
+import { UserInfo } from '../components/UserInfo.js';
+import { PopupWithImage } from '../components/PopupWithImage.js';
+import { PopupWithForm } from '../components/PopupWithForm.js';
+import { PopupWithSubmit } from '../components/PopupWithSubmit.js'
+import { Api } from '../components/Api.js'
 
 let userId = null;
 const api = new Api({
